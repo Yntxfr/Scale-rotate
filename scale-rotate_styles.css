@@ -114,4 +114,62 @@ header ul {
 
 
 /* --------------------------------------------- */
-/* Upper animation */
+/* Lower animation */
+.frame {
+    padding: 90px 10%;
+    display: flex;
+}
+
+.transformer {
+    width: 120px;
+    height: 120px;
+    background: #0f2145;
+    position: relative;
+    animation: horizontal-move 6s infinite ease-in-out;
+    /*
+    animation-name
+    animation-duration
+    animation-timing-function
+    animation-delay
+    animation-iteration-count
+    animation-direction
+    */
+}
+
+.frame img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    animation: glitch-it 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both
+    infinite;
+    z-index: -2;
+}
+
+@keyframes horizontal-move {
+    0%  {top: 0px; left: 0px; background: #00ffff; border-radius: 50%;}
+    70% {top: 0px; left: 400px; background: #3e31fa; width: 320px; height: 320px; transform: rotate(-1080deg); border-radius: 0%;}
+    100% {top: 0px; left: 90%; background: #ff00ff; width: 80px; height: 80px; border-radius: 50%;}
+}
+
+@keyframes glitch-it {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+    to {
+      transform: translate(0);
+    }
+}
